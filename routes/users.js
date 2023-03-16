@@ -27,7 +27,7 @@ router.post('/add', function(req, res, next) {
     newUser.id = users.length +1;
     users.push(newUser); //vi har skapat ett nytt objekt och pushar upp den till vår JSON array.
       //stringify menas med att skriva över den gamla
-    fs.writeFile("mails.txt", JSON.stringify(users), function(err){
+    fs.writeFile("mails.txt", JSON.stringify(users, null, 2), function(err){
       if (err){
         console.log(err);
       }
